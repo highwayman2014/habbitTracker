@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трекер привычек</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="window">
+        <nav class="menu">
+            <div class="logo">
+                <img src="img/Logo.svg" alt="" width="66px" height="71px">
+                <p>Habbit</p>
+            </div>
+
+            <ul class="menu-buttons">
+                <li>
+                    <button class="icon icon-active normal-habbit-button">
+                        <img src="img/sport.svg" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="icon normal-habbit-button">
+                        <img src="img/water.svg" alt="">
+                    </button>
+                </li>
+                <li>
+                    <button class="icon normal-habbit-button">
+                        <img src="img/food.svg" alt="">
+                    </button>
+                </li>
+            </ul>
+            <button class="icon add-habbit-button">
+                <img src="img/add.svg" alt="">
+            </button>
+        </nav>
+        <section class="workspace">
+            <div class="container">
+
+                <div class="habbit-info">
+                    <h1 class="habbit-heading">Отжимания</h1>
+                    <div class="habbit-progress">
+                        <label for="progress" class="progress-heading">Прогресс: <span
+                                id="progressValue">70%</span></label>
+                        <progress id="progress" max="100" value="70" class="progress"></progress>
+                    </div>
+                </div>
+
+                <ol class="habbit-days">
+                    <li class="habbit-day">
+                        <p class="habbit-day-number">День 1</p>
+                        <form class="habbit-day-control">
+                            <p class="habbit-day-view">Первый подход всегда даётся тяжело</p>
+                            <button class="habbit-day-button delete-button">
+                                <img src="img/trash.svg" alt="">
+                            </button>
+                        </form>
+                    </li>
+                    <li class="habbit-day">
+                        <p class="habbit-day-number">День 2</p>
+                        <form class="habbit-day-control">
+                            <input type="text" placeholder="Комментарий" class="input habbit-input habbit-day-view">
+                            <button class="habbit-day-button normal-button">Готово</button>
+                        </form>
+                    </li>
+                </ol>
+
+            </div>
+
+            <form action="" class="habbit-form">
+                <button class="habbit-form-close-button">
+                    <img src="img/cross.svg" alt="">
+                </button>
+                <p class="habbit-form-heading">Новая привычка</p>
+
+                <div>
+                    <p class="icons-list-heading">Иконка</p>
+                    <ul class="icons-list">
+                        <li class="icon">
+                            <img src="img/sport.svg" alt="">
+                        </li>
+                        <li class="icon icon-active">
+                            <img src="img/water.svg" alt="">
+                        </li>
+                        <li class="icon">
+                            <img src="img/food.svg" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="habbit-form-inputs">
+                    <input type="text" placeholder="Название" class="input">
+                    <input type="number" placeholder="Цель" class="input">
+                </div>
+
+                <button type="submit" class="normal-button">Добавить</button>
+            </form>
+
+        </section>
+
+    </main>
+</body>
+
+</html>
