@@ -43,6 +43,8 @@ input[type=number] {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 45px;
+
+    max-width: 900px;
 }
 
 .icon {
@@ -118,6 +120,10 @@ input[type=number] {
     color: #8899A8;
 }
 
+.input-warning {
+    border: 1px solid rgba(224, 62, 62, 0.378);
+}
+
 /*
     Navigation menu
 */
@@ -183,8 +189,10 @@ input[type=number] {
     justify-content: space-between;
 }
 
-.progress {
+.progress-bar {
     width: 235px;
+
+    /* transition: all 0.5s; */
 }
 
 .habbit-days {
@@ -192,6 +200,7 @@ input[type=number] {
     flex-direction: column;
     gap: 12px;
 
+    margin-bottom: 12px;
 }
 
 .habbit-day {
@@ -247,10 +256,28 @@ input[type=number] {
     Form
 */
 
-.habbit-form {
+.cover {
     position: absolute;
     left: 0;
+    right: 0;
     top: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cover-hidden {
+    display: none;
+    transition: all 1s;
+}
+
+.habbit-form {
+    position: relative;
 
     padding: 20px;
 
@@ -266,7 +293,7 @@ input[type=number] {
     text-align: center;
 
     min-width: 30%;
-    display: none;
+    /* display: none; */
 }
 
 .habbit-form-close-button {

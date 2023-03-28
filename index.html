@@ -18,91 +18,71 @@
             </div>
 
             <ul class="menu-buttons">
-                <li>
-                    <button class="icon icon-active normal-habbit-button">
-                        <img src="img/sport.svg" alt="">
-                    </button>
-                </li>
-                <li>
-                    <button class="icon normal-habbit-button">
-                        <img src="img/water.svg" alt="">
-                    </button>
-                </li>
-                <li>
-                    <button class="icon normal-habbit-button">
-                        <img src="img/food.svg" alt="">
-                    </button>
-                </li>
             </ul>
-            <button class="icon add-habbit-button">
-                <img src="img/add.svg" alt="">
+            <button class="icon add-habbit-button" onclick="togglePopup()">
+                <img src="img/add.svg" alt="Добавить привычку">
             </button>
         </nav>
         <section class="workspace">
             <div class="container">
 
                 <div class="habbit-info">
-                    <h1 class="habbit-heading">Отжимания</h1>
+                    <h1 class="habbit-heading">*</h1>
                     <div class="habbit-progress">
                         <label for="progress" class="progress-heading">Прогресс: <span
-                                id="progressValue">70%</span></label>
-                        <progress id="progress" max="100" value="70" class="progress"></progress>
+                                class="progress-value"></span></label>
+                        <progress max="100" value="0" class="progress-bar"></progress>
                     </div>
                 </div>
 
                 <ol class="habbit-days">
-                    <li class="habbit-day">
-                        <p class="habbit-day-number">День 1</p>
-                        <form class="habbit-day-control">
-                            <p class="habbit-day-view">Первый подход всегда даётся тяжело</p>
-                            <button class="habbit-day-button delete-button">
-                                <img src="img/trash.svg" alt="">
-                            </button>
-                        </form>
-                    </li>
-                    <li class="habbit-day">
-                        <p class="habbit-day-number">День 2</p>
-                        <form class="habbit-day-control">
-                            <input type="text" placeholder="Комментарий" class="input habbit-input habbit-day-view">
-                            <button class="habbit-day-button normal-button">Готово</button>
-                        </form>
-                    </li>
+
                 </ol>
-
+                <div class="habbit-day">
+                    <p class="habbit-day-number">День _</p>
+                    <form class="habbit-day-control" onsubmit="addDay(event)">
+                        <input type="text" placeholder="Комментарий" class="input habbit-input habbit-day-view"
+                            name="comment">
+                        <button type="submit" class="habbit-day-button normal-button">Готово</button>
+                    </form>
+                </div>
             </div>
+        </section>
 
-            <form action="" class="habbit-form">
-                <button class="habbit-form-close-button">
-                    <img src="img/cross.svg" alt="">
+        <div class="cover cover-hidden" id="add-popup">
+            <div class="habbit-form">
+                <button class="habbit-form-close-button" onclick="togglePopup()">
+                    <img src="img/cross.svg" alt="Закрыть">
                 </button>
                 <p class="habbit-form-heading">Новая привычка</p>
 
                 <div>
                     <p class="icons-list-heading">Иконка</p>
                     <ul class="icons-list">
-                        <li class="icon">
+                        <li class="icon icon-active" onclick="selectIcon(this, 'sport')">
                             <img src="img/sport.svg" alt="">
                         </li>
-                        <li class="icon icon-active">
+                        <li class="icon" onclick="selectIcon(this, 'water')">
                             <img src="img/water.svg" alt="">
                         </li>
-                        <li class="icon">
+                        <li class="icon" onclick="selectIcon(this, 'food')">
                             <img src="img/food.svg" alt="">
                         </li>
                     </ul>
                 </div>
 
-                <div class="habbit-form-inputs">
-                    <input type="text" placeholder="Название" class="input">
-                    <input type="number" placeholder="Цель" class="input">
-                </div>
+                <form class="habbit-form-inputs" onsubmit="addHabbit(event)">
+                    <input type="text" name="icon" value="sport" id="icon-field" hidden>
+                    <input type="text" placeholder="Название" class="input" name="name">
+                    <input type="number" placeholder="Цель" class="input" name="target">
+                    <button type="submit" class="normal-button">Добавить</button>
+                </form>
 
-                <button type="submit" class="normal-button">Добавить</button>
-            </form>
-
-        </section>
-
+            </div>
+        </div>
     </main>
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>
